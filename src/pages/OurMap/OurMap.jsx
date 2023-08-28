@@ -13,13 +13,13 @@ import "./leaflett.scss";
 import "leaflet/dist/leaflet.css";
 
 export default function OurMap() {
+
   const dispatch = useDispatch();
   const defaultCord = { lat: 51.505, lng: -0.09 };
 
   const FindLocationCords = () => {
     const map = useMapEvents({
       click(e) {
-        // console.log(e.latlng);
         const { lat, lng } = e.latlng;
         const cordinates = [lat, lng];
         dispatch(takeCordinates(cordinates));
@@ -36,9 +36,7 @@ export default function OurMap() {
       />
       <Marker position={defaultCord}>
         <Popup>
-          im live here <br />
-          my cord lat{defaultCord.lat}
-          {defaultCord.lng}
+          im here 
         </Popup>
       </Marker>
       <FindLocationCords />
